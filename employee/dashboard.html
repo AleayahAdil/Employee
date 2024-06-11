@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Directory Dashboard</h1>
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Employees will be listed here -->
+            </tbody>
+        </table>
+        <a href="add_employee.html" class="button">Add Employee</a>
+        <button onclick="logout()" class="button">Log Out</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function logout() {
+            window.location.href = 'logout.php';
+        }
+    </script>
+</body>
+</html>

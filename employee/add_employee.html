@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="css/add_employee.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Employee</h1>
+        <form action="add_employee.php" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="position" placeholder="Position" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone" required>
+            <button type="submit">Add Employee</button>
+        </form>
+        <a href="dashboard.html" class="button">Back to Dashboard</a>
+    </div>
+</body>
+</html>

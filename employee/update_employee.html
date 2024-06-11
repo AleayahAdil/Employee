@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory - Update Employee</title>
+    <link rel="stylesheet" href="css/update_employee.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Employee</h1>
+        <div id="employeeForm">
+            <input type="hidden" id="employeeId">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="position" placeholder="Position">
+            <input type="email" id="email" placeholder="Email">
+            <input type="text" id="phone" placeholder="Phone">
+            <button onclick="updateEmployee()">Update Employee</button>
+        </div>
+        <a href="dashboard.html" class="button">Back to Dashboard</a>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Function to fetch employee data and populate form fields
+        function populateForm() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const employeeId = urlParams.get('id');
+            fetch(`get_employee.php?id=${employeeId}`)
+                .then(response => response.json())
+                .then(employee => {
+                    document.getElementById("employeeId").value = employee.id;
+                    document.getElementById("name").value = employee.name;
+                    document.getElementById("position").value = employee.position;
+                    document.getElementById("email").value = employee.email;
+                    document.getElementById("phone").value = employee.phone;
+                });
+        }
+        
+        // Populate form fields when page loads
+        window.onload = populateForm;
+    </script>
+</body>
+</html>
